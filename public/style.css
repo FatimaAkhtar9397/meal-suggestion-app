@@ -1,52 +1,101 @@
+.logo {
+    width: 160px; /* Adjust the size as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Style for the header title */
+.header-title {
+    font-family: 'Freestyle Script';
+    font-size: 42px; /* Adjust font size */
+    font-weight: bold; /* Make it bold */
+    color: #333; /* Change the text color */
+    text-align: center; /* Center the text */
+    margin: 0; /* Remove default margin */
+    flex-grow: 1; /* Allow the title to grow and take available space */
+}
+
+/* Additional styles for the header */
+header {
+    background-color: #1b3316; /* Light background color */
+    border-bottom: 1px solid #dee2e6; /* Optional border */
+    position: relative; /* Allow absolute positioning for the title */
+}
+
+/* Center the title */
+.header -title {
+    position: absolute; /* Position the title absolutely */
+    left: 50%; /* Move to the center */
+    transform: translateX(-50%); /* Adjust to truly center */
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f8ff;
-    color: #333;
-    text-align: center;
-    margin: 20px;
+    background-color: #e8f5e9; /* Light green background */
+    margin: 0; /* Remove default margin */
+    font-family: Arial, sans-serif; /* Set a default font */
 }
 
-h1 {
-    color: #ff6347; /* Tomato */
+
+.carousel-item {
+    height: 110vh; /* Use max-height instead of height */
+    overflow: hidden;
 }
 
-.meal-category {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 20px 0;
+.carousel-item img {
+    object-fit: cover; /* Ensures the image covers the entire area */
+    height: 100%; /* Makes the image fill the height of the carousel item */
+    width: 100%; /* Makes the image fill the width of the carousel item */
 }
 
-.meal-item {
-    background-color: #ffebcd; /* Blanched Almond */
-    border: 2px solid #ffa07a; /* Light Salmon */
-    border-radius: 10px;
-    margin: 10px;
+@media (max-width: 768px) {
+    .carousel-item {
+        height: 75vh; /* Adjust this value */
+    }
+}
+
+@media (min-width: 769px) {
+    .carousel-item {
+        height: 75vh; /* Adjust this value */
+    }
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for text */
     padding: 10px;
-    width: 200px;
-    transition: transform 0.2s;
 }
 
-.meal-item:hover {
-    transform: scale(1.05);
-}
-
-button {
-    background-color: #32cd32; /* Lime Green */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #28a745; /* Darker Green */
-}
-
-#shopping-list {
+.meals, .my-meals {
     margin-top: 20px;
-    background-color: #fffacd; /* Lemon Chiffon */
-    padding: 10px;
-    border: 1px solid #ffd700; /* Gold */
+}
+
+#meal-content {
+    border: 1px solid #dee2e6;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+
+ #my-meals-list {
+    background-color: #e8f5e9; /* Soothing light green background */
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+
+/* Shopping List Styles */
+.shopping-list-container {
+    background-color: #e8f5e9; /* Soothing light green background */
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.ingredient-list {
+    list-style-type: none; /* Remove dots */
+    padding-left: 0; /* Remove padding on the left */
+}
+
+.ingredient-list li {
+    padding: 5px 0; /* Add some padding to each list item */
+    color: #333; /* Text color */
 }

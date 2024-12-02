@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="recipe-container">
+        <h1 id="recipe-name"></h1>
+        <p id="recipe-details"></p>
+        <button onclick="goBack()">Go Back</button>
+    </div>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const mealName = urlParams.get('name');
+        const meals = JSON.parse(localStorage.getItem('meals'));
+        
+        if (meals) {
+            const meal = Object.values(meals).flat().find(m => m.name === mealName);
+            if (meal) {
+                document.getElementById('recipe-name').innerText = meal.name;
+                document.getElementById('recipe-details').innerText = meal.recipe;
+            }
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>
