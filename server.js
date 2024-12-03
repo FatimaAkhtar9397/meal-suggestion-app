@@ -10,6 +10,8 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+
+
 // MongoDB connection using the connection string from .env
 mongoose.connect(process.env.MONGODB_CONNECTION_STRING, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('MongoDB connected'))
@@ -61,7 +63,7 @@ app.post('/api/login', async (req, res) => {
 });
 
 // Add the /login route to serve the login.html file
-app.Post('/login', (req, res) => {
+app.post('/login', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'login.html')); // Adjust the path as necessary
 });
 
